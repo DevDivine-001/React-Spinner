@@ -3,6 +3,8 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
+import Spinner from "./components/SpinnerLoaded.jsx"
+
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -39,7 +41,7 @@
 const App = () => {
   return (
     <div>
-      App
+      <Spinner />
     </div>
   )
 }
