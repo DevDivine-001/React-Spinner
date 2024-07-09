@@ -40,7 +40,7 @@ import Spinner from "./components/SpinnerLoaded.jsx"
 
 const App = () => {
   return (
-    <div>
+    <div className="flex justify-center items-center w-[100%]">
       <Spinner />
     </div>
   )

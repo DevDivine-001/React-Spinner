@@ -1,45 +1,59 @@
 import { useEffect, useState } from "react"
-import svg from "../../public/Spinner@1x-1.0s-200px-200px.svg"
+import { ClipLoader } from "react-spinners";
+
+
+// export default function Spinner() {
+//   const [text, setText] = useState('');
+//   const [showImg, setShowImg] = useState(false)
+//   useEffect(() => {
+//     setShowImg(false)
+//     setTimeout(() => {
+//       setShowImg(true)
+//       setText('i wanted for 3 seconds to be loaded, did you see the spinner')
+//     }, 3000)
+//   }, [])
+//   return (
+//     <>
+//       <div>
+//         {
+//           showImg ? 
+//         <ClipLoader color={'#D00218'}/>
+//            : (
+//             <h1>{text}</h1>
+//           )
+//         }
+//       </div>
+//     </>
+//   )
+// }
+
+
+
+
+// import { useEffect, useState } from "react"
+// import { ClipLoader } from "react-spinners";
+
 
 export default function Spinner() {
-  const [text, setText] = useState('');
-  const [showImg, setShowImg] = useState(true)
+
+  const [showImg, setShowImg] = useState(false)
   useEffect(() => {
-    setShowImg(false)
+    setShowImg(true)
     setTimeout(() => {
-      setText('i wanted for 3 seconds to be loaded, did you see the spinner')
+      setShowImg(false)
+    
     }, 3000)
   }, [])
   return (
     <>
-      <div>
+      <div className="justify-center items-center flex w-[30%] p-3">
         {
-          showImg ? (
-            <img src={svg} />
-          ) : (
-            <h1>{text}</h1>
-          )
+          showImg ?
+            <ClipLoader color={'#D00218'} />
+            :
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consectetur dolorem officia voluptatibus fugit, rerum sint corrupti itaque possimus quam sed temporibus praesentium architecto ducimus tenetur voluptatum magnam amet! Quod.</div>
         }
       </div>
     </>
   )
 }
-
-
-
-
-// function SpinnerLoaded() {
-//   const [text, setText] = useState('')
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setText('i wanted for 3 seconds to be loaded, did you see the spinner')
-//     })
-//   }, 3000)
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
-
-// export default SpinnerLoaded
